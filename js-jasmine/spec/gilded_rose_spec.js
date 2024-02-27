@@ -69,6 +69,20 @@ it("Sulfuras never decreases in quality and does not have a sell-by date", funct
 "Backstage passes" augmente en qualité comme "Aged Brie", mais la qualité tombe à 0 après le concert.
 */
 
+it("Backstage passes increase in quality like Aged Brie but drop to 0 after the concert", function() {
+  const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20)]);
+  const items = gildedRose.updateQuality();
+  expect(items[0].quality).toEqual(0);
+});
+
+
 /* 7
 "Conjured" items se dégradent en qualité deux fois plus vite que les articles normaux.
 */
+
+it("Conjured items degrade in quality twice as fast as normal items", function() {
+  const gildedRose = new Shop([new Item("Conjured Mana Cake", 3, 6)]);
+  const items = gildedRose.updateQuality();
+  expect(items[0].quality).toEqual(4); 
+});
+
