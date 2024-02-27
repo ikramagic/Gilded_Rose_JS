@@ -26,13 +26,21 @@ it("Standard items decrease in quality by 2 after the sell date has passed", fun
 La qualité d'un article n'est jamais négative.
 */
 
+it("An item's quality is never negative", function() {
+  const gildedRose = new Shop([new Item("Standard Item", 5, 0)]);
+  const items = gildedRose.updateQuality();
+  expect(items[0].quality).toEqual(0);
+});
+
 /* 3
 "Aged Brie" augmente en qualité au fil du temps.
 */
 
+
 /* 4
 La qualité d'un article n'est jamais supérieure à 50, sauf "Sulfuras".
 */
+
 
 /* 5
 "Sulfuras" ne perd jamais en qualité et n'a pas de date de péremption.
