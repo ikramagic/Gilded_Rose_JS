@@ -47,6 +47,12 @@ it("Aged Brie increases in quality the older it gets", function() {
 La qualité d'un article n'est jamais supérieure à 50, sauf "Sulfuras".
 */
 
+it("An item's quality is never more than 50, except Sulfuras", function() {
+  const gildedRose = new Shop([new Item("Aged Brie", 2, 50)]);
+  const items = gildedRose.updateQuality();
+  expect(items[0].quality).toEqual(50);
+});
+
 
 /* 5
 "Sulfuras" ne perd jamais en qualité et n'a pas de date de péremption.
