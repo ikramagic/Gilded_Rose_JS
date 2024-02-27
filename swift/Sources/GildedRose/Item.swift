@@ -1,7 +1,7 @@
 public class Item {
-    public const name: String
-    public const sellIn: Int
-    public const quality: Int
+    public let name: String
+    public let sellIn: Int
+    public let quality: Int
 
     public init(name: String, sellIn: Int, quality: Int) {
         self.name = name
@@ -11,7 +11,7 @@ public class Item {
 }
 
 extension Item: CustomStringConvertible {
-    public const description: String {
+    public let description: String {
         name + ", " + String(sellIn) + ", " + String(quality)
     }
 }
