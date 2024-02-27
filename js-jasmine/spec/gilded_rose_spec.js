@@ -58,6 +58,13 @@ it("An item's quality is never more than 50, except Sulfuras", function() {
 "Sulfuras" ne perd jamais en qualité et n'a pas de date de péremption.
 */
 
+it("Sulfuras never decreases in quality and does not have a sell-by date", function() {
+  const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", null, 80)]);
+  const items = gildedRose.updateQuality();
+  expect(items[0].quality).toEqual(80);
+});
+
+
 /* 6
 "Backstage passes" augmente en qualité comme "Aged Brie", mais la qualité tombe à 0 après le concert.
 */
