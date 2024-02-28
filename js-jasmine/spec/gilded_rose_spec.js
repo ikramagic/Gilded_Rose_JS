@@ -96,4 +96,3 @@ it("Conjured items degrade in quality twice as fast as normal items", function()
   const items = gildedRose.updateQuality();
   expect(items[0].quality).toEqual(4); 
 });
-
