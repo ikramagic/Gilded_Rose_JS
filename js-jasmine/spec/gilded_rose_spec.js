@@ -1,13 +1,17 @@
 let { Shop, Item } = require("../src/gilded_rose.js");
 describe("Gilded Rose", function () {
 
+    /* 0
+February's fool
+  */
+
   it("should foo", function() {
     const gildedRose = new Shop([ new Item("foo", 0, 0) ]);
     const items = gildedRose.updateQuality();
     expect(items[0].name).toEqual("fixme");
   });
   
-  /* 0
+  /* 1
 La qualité baisse de 1 pour les articles standards.
 */
 
@@ -18,7 +22,7 @@ La qualité baisse de 1 pour les articles standards.
   });
 });
 
-/* 1
+/* 2
 Une fois la date de péremption passée, la qualité baisse de 2 pour les articles standards.
 */
 
@@ -29,7 +33,7 @@ it("Standard items decrease in quality by 2 after the sell date has passed", fun
 });
 
 
-/* 2
+/* 3
 La qualité d'un article n'est jamais négative.
 */
 
@@ -39,7 +43,7 @@ it("An item's quality is never negative", function() {
   expect(items[0].quality).toEqual(0);
 });
 
-/* 3
+/* 4
 "Aged Brie" augmente en qualité au fil du temps.
 */
 
@@ -50,7 +54,7 @@ it("Aged Brie increases in quality the older it gets", function() {
 });
 
 
-/* 4
+/* 5
 La qualité d'un article n'est jamais supérieure à 50, sauf "Sulfuras".
 */
 
@@ -61,7 +65,7 @@ it("An item's quality is never more than 50, except Sulfuras", function() {
 });
 
 
-/* 5
+/* 6
 "Sulfuras" ne perd jamais en qualité et n'a pas de date de péremption.
 */
 
@@ -72,7 +76,7 @@ it("Sulfuras never decreases in quality and does not have a sell-by date", funct
 });
 
 
-/* 6
+/* 7
 "Backstage passes" augmente en qualité comme "Aged Brie", mais la qualité tombe à 0 après le concert.
 */
 
@@ -83,7 +87,7 @@ it("Backstage passes increase in quality like Aged Brie but drop to 0 after the 
 });
 
 
-/* 7
+/* 8
 "Conjured" items se dégradent en qualité deux fois plus vite que les articles normaux.
 */
 
